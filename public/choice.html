@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select an Action - Uploader-Files</title>
+    <link rel="stylesheet" href="/public/styles/basic.css">    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-eNQnxJ5eE6oMvE3EXbb5Zm9blABX3ocnI1pI0cV3e6KbxF+Y5S10kEAGl7d9rNKw" crossorigin="anonymous">
+</head>
+<body>
+    <div id="preloader" class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <img id="notificationIcon" class="notificationIcon" src="/public/images/icon.ico" alt="Notification Icon" onclick="toggleNotification()">
+    <div id="notificationBalloon" class="notification-balloon">
+        <span id="notificationMessage" style="margin: 0;"></span>
+    </div>
+
+    <nav class="breadcrumb" aria-label="Navigation">
+        <a href="/home">Home</a>
+        <span>Uploader File</span>
+    </nav>
+
+    <main class="main-content">
+        <section class="intro">
+            <p>Welcome to Uploader-Files! Please choose an option below to proceed.</p>
+        </section>
+    </main>
+
+    <div id="welcomeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="welcomeModalTitle">
+        <div class="modal-content">
+            <h2 id="welcomeModalTitle">Welcome to Uploader-Files!</h2>
+            <p>Please select an option to continue:</p>
+            <div class="modal-buttons">
+                <a href="/Files/upload" class="modal-button" aria-label="Upload File Option">
+                    <i class="fas fa-upload" aria-hidden="true"></i> Upload File
+                </a>
+                <button id="openDownloadModal" class="modal-button" aria-label="Download File Option">
+                    <i class="fas fa-download" aria-hidden="true"></i> Download File
+                </button>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="downloadModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="downloadModalTitle">
+        <div class="modal-content">
+            <h2 id="downloadModalTitle"><i class="fas fa-download" aria-hidden="true"></i> Download File</h2>
+            <button class="close-modal" id="closeDownloadModal" aria-label="Close Download Modal">&times;</button>
+            <section class="encryption-notice" aria-label="Encryption Notice">
+                <i class="fas fa-lock" aria-hidden="true"></i>
+                <p>Your files are <strong>end-to-end encrypted</strong> for your privacy and security.</p>
+            </section>
+            
+            <section class="download-area" id="downloadArea" aria-labelledby="downloadAreaLabel">
+                <div class="download-box" role="region" aria-labelledby="downloadBoxLabel">
+                    <h3 id="downloadBoxLabel"><i class="fas fa-download" aria-hidden="true"></i> Enter Your Download Link</h3>
+                    <input type="url" id="userDownloadLink" class="download-input" placeholder="Enter your download link here" aria-label="Download Link Input Field" />
+                    <button class="download-button" id="downloadBtn" aria-label="Download File Button"><i class="fas fa-download" aria-hidden="true"></i> Download File</button>
+                </div>
+            </section>        
+        </div>
+    </div>
+
+
+    <footer class="footer" role="contentinfo">
+        <p>
+            Uploader-Files allows you to upload and download temporary files securely and quickly. Use this service for both personal and professional purposes without any limitations or attribution. If you find this tool useful, consider sharing it with others or giving us a mention to help spread the word!
+        </p>
+    </footer>
+
+    <script src="/public/js/download.js" defer></script>
+</body>
+</html>

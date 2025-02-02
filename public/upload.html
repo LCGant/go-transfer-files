@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload - Uploader-Files</title>
+  <link rel="icon" href="/public/images/icon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/public/styles/basic.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-eNQnxJ5eE6oMvE3EXbb5Zm9blABX3ocnI1pI0cV3e6KbxF+Y5S10kEAGl7d9rNKw" crossorigin="anonymous">
+  <script src="/public/js/upload.js" defer></script>
+</head>
+<body>
+  <div id="preloader" class="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <nav class="breadcrumb" aria-label="Navigation">
+    <a href="/">Home</a>
+    <span>File Upload</span>
+  </nav>
+
+  <main class="main-content">
+    <section class="intro">
+      <p>Upload files up to <strong>100MB</strong> and receive a download link valid for a limited time.</p>
+    </section>
+
+    <section class="upload-area" id="uploadArea">
+      <div class="upload-box">
+        <i class="fas fa-file-upload upload-icon" aria-hidden="true"></i>
+        <h2>Drag & Drop Files Here</h2>
+        <p class="or-text">OR</p>
+        <input type="file" id="fileInput" class="file-input" />
+        <label for="fileInput" class="file-label" aria-label="File Upload Button">
+          <span class="file-button">
+            <i class="fas fa-folder-open" aria-hidden="true"></i> Choose File
+          </span>
+        </label>
+        <span class="file-name">No file selected</span>
+
+        <div class="duration-selector">
+          <label for="durationSelect">
+            <i class="fas fa-clock" aria-hidden="true"></i> Select Availability Duration:
+          </label>
+          <select id="durationSelect" class="duration-select">
+            <option value="1">1 Minute</option>
+            <option value="10">10 Minutes</option>
+            <option value="30">30 Minutes</option>
+            <option value="60">1 Hour</option>
+            <option value="120">2 Hours</option>
+            <option value="180">3 Hours</option>
+          </select>
+        </div>
+
+        <button class="upload-button" id="uploadBtn" aria-label="Upload File Button">
+          <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i> Upload File
+        </button>
+
+        <div class="progress-bar hidden" id="progressBar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="downloadModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal" aria-label="Close Modal">&times;</button>
+      <h2>File Uploaded Successfully!</h2>
+      <p>Use the link below to download your file within the selected timeframe:</p>
+      <div class="download-link-box">
+        <input type="text" id="downloadLink" readonly aria-label="Download Link Field">
+        <button id="copyLinkBtn" class="copy-button" aria-label="Copy Download Link">
+          <i class="fas fa-copy" aria-hidden="true"></i> Copy Link
+        </button>
+      </div>
+      <p id="countdownTimer">Time Remaining: 10:00</p>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <p>
+      Files uploaded and shared using this tool are fully encrypted and temporary.
+      Use this service for both personal and professional purposes.
+    </p>
+  </footer>
+</body>
+</html>
