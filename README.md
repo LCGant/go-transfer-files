@@ -71,7 +71,7 @@ POST /Files/upload
 ```json
 {
   "message": "File uploaded successfully",
-  "download_link": "/lokiFiles/download?token=your-token"
+  "download_link": "/Files/download?token=your-token"
 }
 ```
 
