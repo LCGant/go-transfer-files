@@ -53,6 +53,10 @@ This will start the application on **localhost:8080**.
 4. Click **Upload** to generate a download link.
 5. Share the link with others to allow file downloads.
 
+## 📹 Showcase
+
+![Showcase](img-showcase/demo.gif)
+
 ## API Endpoints
 
 ### **Upload a File**
